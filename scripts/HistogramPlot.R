@@ -1,0 +1,1 @@
+Function to create histogram plotted with bat data.

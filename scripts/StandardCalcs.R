@@ -1,0 +1,1 @@
+Function to perform standard error and standard deviation calculations on bat data set.

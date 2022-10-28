@@ -1,0 +1,1 @@
+Function to clean up the data set by removing any possible NA values.
