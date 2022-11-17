@@ -1,0 +1,22 @@
+---
+title: "Package Tutorial"
+author: "Travis Bayer"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# An introduction to my R package
+
+My R package has ***five*** useful functions.
+
+We can go on to a new line.
+
+# Installation Instructions
+```{r eval=FALSE, include=TRUE}
+install.packages("leaflet")
+#Downlaod package if need be
+```
+
+![Caption](path/for/image)
+
+It is possible to include [hyperlinks](wright-lab.org).
