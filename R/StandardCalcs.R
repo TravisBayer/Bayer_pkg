@@ -1,14 +1,11 @@
-#' Function 
-#' @param filename name of file
-#'
-#' @return The NA values omitted from filename
+#' Function calculates the standard deviation of a basic spatial data set and returns that.
 #' 
+#' @param filename name of file
+#' @return standard deviation
 #' @examples 
-#' clean_data(BatData)
+#' sdfh(HeartRate)
 #' @export
-
 sdfh <- function(dataframe){
-  HeartRate <- read_csv("/cloud/project/data/uro_data_r.csv")
   x <- HeartRate$fH.bpm
   standev <- sd(x)
   return(standev)

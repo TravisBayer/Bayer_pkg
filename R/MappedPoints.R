@@ -1,6 +1,6 @@
 #' Function to map data points of latitude and longitude from coordinates obtained from collected GPS data.
 
-#' @param filename name of file
+#' @param dataframe name of dataframe
 #'
 #' @return Mapped data points of collected GPS coordinates of bats in Panama.
 #' 
