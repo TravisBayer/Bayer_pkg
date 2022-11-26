@@ -7,15 +7,44 @@ output: html_document
 
 # An introduction to my R package
 
-My R package has ***five*** useful functions.
+My R package has ***five*** useful functions that can be utilized in basic movement ecology data frames.
 
-We can go on to a new line.
+
+
+First you will need to follow the steps below to install the package.
 
 # Installation Instructions
+
+This package requires a few packages.
+
 ```{r eval=FALSE, include=TRUE}
+install.packages("tidyverse")
+install.packages("googlesheets4")
+install.packages("sf")
+install.packages("mapview")
+install.packages("readr")
 install.packages("leaflet")
-#Downlaod package if need be
+
+#Install any packages you have not previously installed
+
+library(tidyverse)
+library(googlesheets4)
+library(sf)
+library(mapview)
+library(readr)
+library(leaflet)
+
+#Library all necessary packages
 ```
+
+```
+BatData <- read_sheet("https://drive.google.com/file/d/1k4QEm-sXBqhX8J1cpVlo3MoVODcHvStR/view?usp=sharing")
+
+batcoord <- read_sheet("https://drive.google.com/file/d/1Fk9xG_sAdjYyp5V8Dg9e_C64QROBpItp/view?usp=sharing")
+
+accdata <- read_sheet("https://drive.google.com/file/d/1mrYFEnUN6L7jvKqoCgtcRewn-SBes_7R/view?usp=sharing")
+```
+
 
 ![Caption](path/for/image)
 
