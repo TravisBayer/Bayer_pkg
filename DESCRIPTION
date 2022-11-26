@@ -7,7 +7,7 @@ Authors@R:
 Description: Contains functions helpful in cleaning, analyzing, and mapping movement data.
 License: MIT + file LICENSE
 Depends:
-  R (> 3.0)
+  R (>= 2.10)
 Imports:
   tidyverse, googlesheets4, sf, mapview, readr, leaflet
 Suggests:
