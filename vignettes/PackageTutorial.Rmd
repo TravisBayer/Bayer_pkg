@@ -18,11 +18,11 @@ First you will need to follow the steps below to install the package.
 Start off by installing our initial package
 
 ```
-install.packages("Bayer.project")
+remotes::install_github("TravisBayer/Bayer_pkg")
 
 #After installation, library the package
 
-library(Bayer.project)
+library(Bayer_pkg)
 ```
 
 This package requires installation of a few other packages.
