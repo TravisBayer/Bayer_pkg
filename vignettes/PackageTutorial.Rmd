@@ -38,14 +38,25 @@ library(leaflet)
 ```
 
 ```{r eval=FALSE, include=TRUE}
-BatData <- read_sheet("https://drive.google.com/file/d/1k4QEm-sXBqhX8J1cpVlo3MoVODcHvStR/view?usp=sharing")
+download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv", destfile = "/cloud/project/homeworks/ACC.csv")
 
-batcoord <- read_sheet("https://drive.google.com/file/d/1Fk9xG_sAdjYyp5V8Dg9e_C64QROBpItp/view?usp=sharing")
+download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv", destfile = "/cloud/project/homeworks/BatGPS.csv")
 
-accdata <- read_sheet("https://drive.google.com/file/d/1mrYFEnUN6L7jvKqoCgtcRewn-SBes_7R/view?usp=sharing")
+download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv", destfile = "/cloud/project/homeworks/uro_data_r.csv")
 
 #Download and read each of the necessary data sets from Google Sheets
 ```
+
+```
+#Next assign each data set to the appropriate object titles
+
+accdata <- read_csv("/Cloud/project/data/ACC.csv")
+
+batcoord <- read_csv("/Cloud/project/data/BatGPS.csv")
+
+BatData <- read_csv("/Cloud/project/data/uro_data_r.csv")
+```
+
 
 ```
 #Finally, once required packages and data has been acquired we can install our package
