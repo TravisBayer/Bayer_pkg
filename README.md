@@ -56,14 +56,37 @@ This package relies on sf for a standardized way to encode spatial vector data.
 This package relies on mapview for a way to quickly and conveniently create interactive visualizations of spatial data.
 This package relies on readr to get rectangular data out of comma separated (csv) and into R.
 
-``{r}
+```
 install.packages("tidyverse")
 install.packages("leaflet")
 install.packages("googlesheets4")
 install.packages("sf")
 install.packages("mapview")
 install.packages("readr")
-``
+
+#Install any packages you have not previously installed
+
+library(tidyverse)
+library(googlesheets4)
+library(sf)
+library(mapview)
+library(readr)
+library(leaflet)
+
+#Library all necessary packages
+```
+
+From here we can read in necessary or relevant data
+
+```
+#Read in data and assign each to the following objects
+
+BatData <- read_sheet("https://drive.google.com/file/d/1k4QEm-sXBqhX8J1cpVlo3MoVODcHvStR/view?usp=sharing")
+
+batcoord <- read_sheet("https://drive.google.com/file/d/1Fk9xG_sAdjYyp5V8Dg9e_C64QROBpItp/view?usp=sharing")
+
+accdata <- read_sheet("https://drive.google.com/file/d/1mrYFEnUN6L7jvKqoCgtcRewn-SBes_7R/view?usp=sharing")
+```
 
 # Usage Examples
 

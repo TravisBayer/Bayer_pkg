@@ -3,10 +3,10 @@
 #' @param filename name of file
 #' @return standard deviation
 #' @examples 
-#' sdfh(HeartRate)
+#' sdfh(BatData)
 #' @export
 sdfh <- function(dataframe){
-  x <- HeartRate$fH.bpm
+  x <- BatData$fH.bpm
   standev <- sd(x)
   return(standev)
 }

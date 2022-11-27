@@ -43,9 +43,70 @@ BatData <- read_sheet("https://drive.google.com/file/d/1k4QEm-sXBqhX8J1cpVlo3MoV
 batcoord <- read_sheet("https://drive.google.com/file/d/1Fk9xG_sAdjYyp5V8Dg9e_C64QROBpItp/view?usp=sharing")
 
 accdata <- read_sheet("https://drive.google.com/file/d/1mrYFEnUN6L7jvKqoCgtcRewn-SBes_7R/view?usp=sharing")
+
+#Download and read each of the necessary data sets from Google Sheets
 ```
 
-HeartRate <- read_csv("/cloud/project/data/uro_data_r.csv")
-![Caption](path/for/image)
+```
+#Finally, once required packages and data has been acquired we can install our package
 
-It is possible to include [hyperlinks](wright-lab.org).
+install.packages("Bayer.project")
+
+#After installation, library the package
+
+library(Bayer.project)
+```
+
+There are many ways to work with, analyze, and visualize data derived from movement ecology studies. This packages provides a handful of examples of some useful ways to begin using some basic example data sets collected from a couple studies on neotropical bats.
+
+Three data sets will be used to provide a well rounded understanding of the type of data that can be used in movement ecology as well as some examples of what you can do with each.
+
+The three data sets include accelerometry, heart rate frequencies, and GPS points. Further variables can be derived from each of these data sets by performing various estimations such as work done (W), energy expended (J), or Vectorial Dynamic Body Acceleration (VeDBA). These calculations have already been performed and included in downloaded data sets.
+
+Now, to better determine if there is any possible relationships occurring between heart rate and work being done we can plot the two variables from one of our data sets against each other in a histogram.
+
+```
+histo_plot(BatData)
+```
+
+![Heart Rate Histogram](/Cloud/project/graphics/Rplot.pdf)
+
+Visualizing this and confirming or rejecting possible relationships between energy metrics can be useful when trying to determine which of these metabolic proxies to incorporate or utilize in an energy landscape visualization.
+
+Additionally, we can utilize the longitude and latitude data points obtained from GPS in one of our data sets to get a visualization of where they are located on an interactive map.
+
+```
+Mapping(batcoord)
+```
+
+By doing this we can get a better understand of not only the visual location of the tagged animal but a better visual representation of the distribution of the animal in its environment as well as throughout its foraging night
+
+Click [here](https://271f397ba2bb47a99242c45beb04ef07.app.posit.cloud/file_show?path=%2Fcloud%2Fproject%2Fgraphics%2FMap.html) to view what your interactive map should look like.
+
+Next, we can also utilize a function to clean one of our data sets to ensure there are no NA values within it.
+
+```
+clean_data(BatData)
+```
+
+This function helps decrease the chances of error or incorrect calculations when doing further analyses of the data frame by removing the NA values that might otherwise lead to a source of error in your future calculations/estimates.
+
+Furthermore, we can create a Power Curve from our heart rate data.
+
+```
+Joules(accdata)
+```
+
+![PowerCurve](/Cloud/project/graphics/powerplot.pdf)
+
+By using this function, we can see how a bat's heart rate varies as they alter the energy they are expending throughout a night. When you combine data such as this and pair it with spatial GPS data, you can categorize areas of low or high energy expenditure within their environment based on their locations.
+
+Lastly, we can calculate the standard deviation of our heart rate data.
+
+```
+sdfh(BatData)
+```
+
+Returning a value of 106.9664
+
+This function helps us to determine the magnitude that bat's deviate their heart rate from their mean heart rate frequency. This can be useful to utilize when estimating the minimum and maximum cost of transport for a certain species and spatial route.

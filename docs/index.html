@@ -72,15 +72,39 @@
 <div class="section level1">
 <div class="page-header"><h1 id="bayer_pkg-information-and-uses">Bayer_pkg information and uses<a class="anchor" aria-label="anchor" href="#bayer_pkg-information-and-uses"></a>
 </h1></div>
-<p>The package will take a data set and read it in. From there it will omit any possible NA values form the data set. It has the option to create 2 different visual graphics. You can pick from a Bar Graph or a Histogram. This package will as map your data points on a world map with extra information displayed when a mouse key is hovered over. Lastly, the package will calculate the data sets standard error and/or standard deviation.</p>
-<p>This package works well with most types of ecological movement data sets.</p>
-<p>The outputs of the data set are Bar graphs, Histograms, NA ommissions, Mapped points, and Standard Error/Deviation calculations.</p>
+<p>The package will take a data set and read it in. From there it will omit any possible NA values form the data set. It has the option to create 2 different visual graphics. You can pick from a Histogram or a linear Power Plot. This package will also map your GPS latitude and longitude data points on a world map. Lastly, the package will calculate the data set’s standard deviation.</p>
+<p>This package works well with most types of basic ecological movement data sets.</p>
+<p>The outputs of the data set are Line plot, Histograms, NA ommissions, Mapped points, and Standard Deviation calculations.</p>
 </div>
 <div class="section level1">
-<h1 id="installation">installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+<h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h1>
-<p>This package relies on tidyverse for data cleaning functionality. This package relies on leaflet for data mapping.</p>
-<p><code>{r} install.packages("tidyverse") install.packages("leaflet")</code></p>
+<p>This package relies on tidyverse for data cleaning functionality. This package relies on leaflet for interactive data mapping visualizations. This package relies on googlesheets4 for retrieving and reading in outside data frames. This package relies on sf for a standardized way to encode spatial vector data. This package relies on mapview for a way to quickly and conveniently create interactive visualizations of spatial data. This package relies on readr to get rectangular data out of comma separated (csv) and into R.</p>
+<pre><code><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"leaflet"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"googlesheets4"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"sf"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"mapview"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"readr"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#Install any packages you have not previously installed</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://googlesheets4.tidyverse.org" class="external-link">googlesheets4</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/r-spatial/mapview" class="external-link">mapview</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org" class="external-link">readr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/leaflet/" class="external-link">leaflet</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#Library all necessary packages</span></span></code></pre>
+<p>From here we can read in necessary or relevant data</p>
+<pre><code><span><span class="co">#Read in data and assign each to the following objects</span></span>
+<span></span>
+<span><span class="va">BatData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://drive.google.com/file/d/1k4QEm-sXBqhX8J1cpVlo3MoVODcHvStR/view?usp=sharing"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">batcoord</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://drive.google.com/file/d/1Fk9xG_sAdjYyp5V8Dg9e_C64QROBpItp/view?usp=sharing"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">accdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://drive.google.com/file/d/1mrYFEnUN6L7jvKqoCgtcRewn-SBes_7R/view?usp=sharing"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="section level1">
 <h1 id="usage-examples">Usage Examples<a class="anchor" aria-label="anchor" href="#usage-examples"></a>
