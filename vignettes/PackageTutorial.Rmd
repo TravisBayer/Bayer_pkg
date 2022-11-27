@@ -60,11 +60,11 @@ download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/mast
 ```
 #Next assign each data set to the appropriate object titles
 
-accdata <- read_csv("/Cloud/project/data/ACC.csv")
+accdata <- read_csv("data/ACC.csv")
 
-batcoord <- read_csv("/Cloud/project/data/BatGPS.csv")
+batcoord <- read_csv("data/BatGPS.csv")
 
-BatData <- read_csv("/Cloud/project/data/uro_data_r.csv")
+BatData <- read_csv("data/uro_data_r.csv")
 ```
 
 There are many ways to work with, analyze, and visualize data derived from movement ecology studies. This packages provides a handful of examples of some useful ways to begin using some basic example data sets collected from a couple studies on neotropical bats.
