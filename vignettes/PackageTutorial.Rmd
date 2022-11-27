@@ -22,7 +22,7 @@ remotes::install_github("TravisBayer/Bayer_pkg")
 
 #After installation, library the package
 
-library(Bayer_pkg)
+library(Bayer.project)
 ```
 
 This package requires installation of a few other packages.
