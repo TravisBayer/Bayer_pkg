@@ -15,7 +15,17 @@ First you will need to follow the steps below to install the package.
 
 # Installation Instructions
 
-This package requires a few packages.
+Start off by installing our initial package
+
+```
+install.packages("Bayer.project")
+
+#After installation, library the package
+
+library(Bayer.project)
+```
+
+This package requires installation of a few other packages.
 
 ```{r eval=FALSE, include=TRUE}
 install.packages("tidyverse")
@@ -38,11 +48,11 @@ library(leaflet)
 ```
 
 ```{r eval=FALSE, include=TRUE}
-download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv", destfile = "/cloud/project/homeworks/ACC.csv")
+download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv", destfile = "/cloud/project/data/ACC.csv")
 
-download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv", destfile = "/cloud/project/homeworks/BatGPS.csv")
+download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv", destfile = "/cloud/project/data/BatGPS.csv")
 
-download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv", destfile = "/cloud/project/homeworks/uro_data_r.csv")
+download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv", destfile = "/cloud/project/data/uro_data_r.csv")
 
 #Download and read each of the necessary data sets from Google Sheets
 ```
@@ -55,17 +65,6 @@ accdata <- read_csv("/Cloud/project/data/ACC.csv")
 batcoord <- read_csv("/Cloud/project/data/BatGPS.csv")
 
 BatData <- read_csv("/Cloud/project/data/uro_data_r.csv")
-```
-
-
-```
-#Finally, once required packages and data has been acquired we can install our package
-
-install.packages("Bayer.project")
-
-#After installation, library the package
-
-library(Bayer.project)
 ```
 
 There are many ways to work with, analyze, and visualize data derived from movement ecology studies. This packages provides a handful of examples of some useful ways to begin using some basic example data sets collected from a couple studies on neotropical bats.
