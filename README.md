@@ -9,35 +9,6 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# .
-# .
-# . 
-# .
-# . 
-# .
-# .
-# .
-# .
-# .
-# .
-# . 
-# .
-# . 
-# .
-# .
-# .
-# .
-# .
-# . 
-# .
-# .
-# .
-# .
-# .
-# .
-# .
-# .
-# .
 
 # Bayer_pkg information and uses
 
@@ -76,18 +47,20 @@ library(leaflet)
 #Library all necessary packages
 ```
 
-From here we can read in necessary or relevant data
+From here we can download the necessary or relevant data
 
+```{r eval=FALSE, include=TRUE}
+download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv", destfile = "/cloud/project/data/ACC.csv")
+
+download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv", destfile = "/cloud/project/data/BatGPS.csv")
+
+download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv", destfile = "/cloud/project/data/uro_data_r.csv")
+
+#Download and read each of the necessary data sets
 ```
-#Read in data and assign each to the following objects
 
-BatData <- read_sheet("https://drive.google.com/file/d/1k4QEm-sXBqhX8J1cpVlo3MoVODcHvStR/view?usp=sharing")
-
-batcoord <- read_sheet("https://drive.google.com/file/d/1Fk9xG_sAdjYyp5V8Dg9e_C64QROBpItp/view?usp=sharing")
-
-accdata <- read_sheet("https://drive.google.com/file/d/1mrYFEnUN6L7jvKqoCgtcRewn-SBes_7R/view?usp=sharing")
-```
+For further package tutorial instructions follow the package tutorial found under the articles tab above.
 
 # Usage Examples
 
-You may want to utilize this package to clean up basic ecological movement data, perform basic data analyzation, and further create visualizations with data to help viewers better understand the dispersal of it.
+You may want to utilize this package to clean up basic ecological movement data, perform basic data analyzations, and further create visualizations with data to help viewers better understand the dispersal of it.

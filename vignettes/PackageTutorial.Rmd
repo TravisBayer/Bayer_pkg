@@ -54,7 +54,7 @@ download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/mast
 
 download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv", destfile = "/cloud/project/data/uro_data_r.csv")
 
-#Download and read each of the necessary data sets from Google Sheets
+#Download and read each of the necessary data sets
 ```
 
 ```
@@ -79,7 +79,7 @@ Now, to better determine if there is any possible relationships occurring betwee
 histo_plot(BatData)
 ```
 
-![Heart Rate Histogram](/Cloud/project/graphics/Rplot.pdf)
+![Heart Rate Histogram](Cloud/project/graphics/Rplot.png)
 
 Visualizing this and confirming or rejecting possible relationships between energy metrics can be useful when trying to determine which of these metabolic proxies to incorporate or utilize in an energy landscape visualization.
 
@@ -107,7 +107,7 @@ Furthermore, we can create a Power Curve from our heart rate data.
 Joules(accdata)
 ```
 
-![PowerCurve](/Cloud/project/graphics/powerplot.pdf)
+![PowerCurve](Cloud/project/graphics/powerplot.png)
 
 By using this function, we can see how a bat's heart rate varies as they alter the energy they are expending throughout a night. When you combine data such as this and pair it with spatial GPS data, you can categorize areas of low or high energy expenditure within their environment based on their locations.
 
