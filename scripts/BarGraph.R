@@ -1,1 +1,0 @@
-Function to create bar graph comparing average weights of bats with various ectoparasites
