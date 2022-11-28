@@ -6,7 +6,7 @@
 #' Joules(accdata)
 #' @export
 Joules <- function(dataframe){
-  heartjoules <- ggplot() +
-    geom_line(mapping = aes(x = fH.bpm, y = Joules.p.h), data = BatData)
+  heartjoules <- ggplot2::ggplot() +
+    ggplot2::geom_line(mapping = aes(x = fH.bpm, y = Joules.p.h), data = BatData)
   return(heartjoules)
 }

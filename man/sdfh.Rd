@@ -2,19 +2,19 @@
 % Please edit documentation in R/StandardCalcs.R
 \name{sdfh}
 \alias{sdfh}
-\title{Standard Deviation of Heart Rates}
+\title{Function calculates the standard deviation of a basic spatial data set and returns that.}
 \usage{
 sdfh(dataframe)
 }
 \arguments{
-\item{dataframe}{name of dataframe}
+\item{filename}{name of file}
 }
 \value{
-Standard deviation will be calculated from dataframe.
+standard deviation
 }
 \description{
-Function calculates standard deviation of dataframe, and returns that.
+Function calculates the standard deviation of a basic spatial data set and returns that.
 }
 \examples{
-sdfh(HeartRate)
+sdfh(BatData)
 }

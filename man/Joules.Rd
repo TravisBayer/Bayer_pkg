@@ -2,18 +2,18 @@
 % Please edit documentation in R/PowerPlot.R
 \name{Joules}
 \alias{Joules}
-\title{Energy Expenditure and Heart Rate Power Curve}
+\title{Function to calculate energy exerted compared to heart rate.}
 \usage{
 Joules(dataframe)
 }
 \arguments{
-\item{dataframe}{name of dataframe}
+\item{filename}{name of file}
 }
 \value{
-Power curve from dataframe.
+Line graph of selected data set comparing heart rate against energy being expended.
 }
 \description{
-Function that generates a Power Curve visualization derived from energy expenditure and heart rate metrics from dataframe.
+Function to calculate energy exerted compared to heart rate.
 }
 \examples{
 Joules(accdata)
