@@ -68,7 +68,7 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<p><code>{r setup, include=FALSE} knitr::opts_chunk$set(echo = TRUE)</code> # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # . # .</p>
+<p><code>{r setup, include=FALSE} knitr::opts_chunk$set(echo = TRUE)</code></p>
 <div class="section level1">
 <div class="page-header"><h1 id="bayer_pkg-information-and-uses">Bayer_pkg information and uses<a class="anchor" aria-label="anchor" href="#bayer_pkg-information-and-uses"></a>
 </h1></div>
@@ -97,19 +97,17 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/leaflet/" class="external-link">leaflet</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">#Library all necessary packages</span></span></code></pre>
-<p>From here we can read in necessary or relevant data</p>
-<pre><code><span><span class="co">#Read in data and assign each to the following objects</span></span>
-<span></span>
-<span><span class="va">BatData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://drive.google.com/file/d/1k4QEm-sXBqhX8J1cpVlo3MoVODcHvStR/view?usp=sharing"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">batcoord</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://drive.google.com/file/d/1Fk9xG_sAdjYyp5V8Dg9e_C64QROBpItp/view?usp=sharing"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">accdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://drive.google.com/file/d/1mrYFEnUN6L7jvKqoCgtcRewn-SBes_7R/view?usp=sharing"</span><span class="op">)</span></span></code></pre>
+<p>From here we can download the necessary or relevant data</p>
+<p>```{r eval=FALSE, include=TRUE} download.file(url =“<a href="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv" class="external-link uri">https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv</a>”, destfile = “/cloud/project/data/ACC.csv”)</p>
+<p>download.file(url =“<a href="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv" class="external-link uri">https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv</a>”, destfile = “/cloud/project/data/BatGPS.csv”)</p>
+<p>download.file(url =“<a href="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv" class="external-link uri">https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv</a>”, destfile = “/cloud/project/data/uro_data_r.csv”)</p>
+<p>#Download and read each of the necessary data sets ```</p>
+<p>For further package tutorial instructions follow the package tutorial found under the articles tab above.</p>
 </div>
 <div class="section level1">
 <h1 id="usage-examples">Usage Examples<a class="anchor" aria-label="anchor" href="#usage-examples"></a>
 </h1>
-<p>You may want to utilize this package to clean up basic ecological movement data, perform basic data analyzation, and further create visualizations with data to help viewers better understand the dispersal of it.</p>
+<p>You may want to utilize this package to clean up basic ecological movement data, perform basic data analyzations, and further create visualizations with data to help viewers better understand the dispersal of it.</p>
 </div>
 
   </div>

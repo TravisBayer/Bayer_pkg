@@ -124,7 +124,7 @@ package.</p>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url <span class="op">=</span><span class="st">"https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv"</span>, destfile <span class="op">=</span> <span class="st">"/cloud/project/data/uro_data_r.csv"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co">#Download and read each of the necessary data sets from Google Sheets</span></span></code></pre></div>
+<span><span class="co">#Download and read each of the necessary data sets</span></span></code></pre></div>
 <pre><code><span><span class="co">#Next assign each data set to the appropriate object titles</span></span>
 <span></span>
 <span><span class="va">accdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv</a></span><span class="op">(</span><span class="st">"data/ACC.csv"</span><span class="op">)</span></span>
@@ -151,7 +151,7 @@ variables from one of our data sets against each other in a
 histogram.</p>
 <pre><code><span><span class="fu"><a href="../reference/histo_plot.html">histo_plot</a></span><span class="op">(</span><span class="va">BatData</span><span class="op">)</span></span></code></pre>
 <div class="figure">
-<embed src="/Cloud/project/graphics/Rplot.pdf"></embed><p class="caption">Heart Rate Histogram</p>
+<img src="Cloud/project/graphics/Rplot.png" alt=""><p class="caption">Heart Rate Histogram</p>
 </div>
 <p>Visualizing this and confirming or rejecting possible relationships
 between energy metrics can be useful when trying to determine which of
@@ -178,7 +178,7 @@ future calculations/estimates.</p>
 data.</p>
 <pre><code><span><span class="fu"><a href="../reference/Joules.html">Joules</a></span><span class="op">(</span><span class="va">accdata</span><span class="op">)</span></span></code></pre>
 <div class="figure">
-<embed src="/Cloud/project/graphics/powerplot.pdf"></embed><p class="caption">PowerCurve</p>
+<img src="../graphics/PowerCurve.png" alt=""><p class="caption">PowerCurve</p>
 </div>
 <p>By using this function, we can see how a bat’s heart rate varies as
 they alter the energy they are expending throughout a night. When you
