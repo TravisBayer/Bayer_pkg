@@ -107,7 +107,7 @@ Furthermore, we can create a Power Curve from our heart rate data.
 Joules(accdata)
 ```
 
-include_graphics("/cloud/project/graphics/powerplot.png")
+knitr::include_graphics("graphics/powerplot.png")
 
 By using this function, we can see how a bat's heart rate varies as they alter the energy they are expending throughout a night. When you combine data such as this and pair it with spatial GPS data, you can categorize areas of low or high energy expenditure within their environment based on their locations.
 
