@@ -72,7 +72,7 @@
                         <h4 data-toc-skip class="author">Travis
 Bayer</h4>
             
-            <h4 data-toc-skip class="date">2022-11-26</h4>
+            <h4 data-toc-skip class="date">2022-11-28</h4>
       
       
       <div class="hidden name"><code>PackageTutorial.Rmd</code></div>
@@ -92,8 +92,14 @@ package.</p>
 <div class="section level2">
 <h2 id="installation-instructions">Installation Instructions<a class="anchor" aria-label="anchor" href="#installation-instructions"></a>
 </h2>
-<p>This package requires a few packages.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<p>Start off by installing our initial package</p>
+<pre><code><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"TravisBayer/Bayer_pkg"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#After installation, library the package</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">Bayer.project</span><span class="op">)</span></span></code></pre>
+<p>This package requires installation of a few other packages.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"googlesheets4"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"sf"</span><span class="op">)</span></span>
@@ -111,19 +117,82 @@ package.</p>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/leaflet/" class="external-link">leaflet</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">#Library all necessary packages</span></span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">BatData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://drive.google.com/file/d/1k4QEm-sXBqhX8J1cpVlo3MoVODcHvStR/view?usp=sharing"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url <span class="op">=</span><span class="st">"https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv"</span>, destfile <span class="op">=</span> <span class="st">"/cloud/project/data/ACC.csv"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">batcoord</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://drive.google.com/file/d/1Fk9xG_sAdjYyp5V8Dg9e_C64QROBpItp/view?usp=sharing"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url <span class="op">=</span><span class="st">"https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv"</span>, destfile <span class="op">=</span> <span class="st">"/cloud/project/data/BatGPS.csv"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">accdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://drive.google.com/file/d/1mrYFEnUN6L7jvKqoCgtcRewn-SBes_7R/view?usp=sharing"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url <span class="op">=</span><span class="st">"https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv"</span>, destfile <span class="op">=</span> <span class="st">"/cloud/project/data/uro_data_r.csv"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">#Download and read each of the necessary data sets from Google Sheets</span></span></code></pre></div>
-<p>To better determine if there is any possible relationships occurring
-between heart rate and work being done we can plot the two variables
-from one of our data sets against each other in a histogram.</p>
+<pre><code><span><span class="co">#Next assign each data set to the appropriate object titles</span></span>
+<span></span>
+<span><span class="va">accdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv</a></span><span class="op">(</span><span class="st">"data/ACC.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">batcoord</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv</a></span><span class="op">(</span><span class="st">"data/BatGPS.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">BatData</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv</a></span><span class="op">(</span><span class="st">"data/uro_data_r.csv"</span><span class="op">)</span></span></code></pre>
+<p>There are many ways to work with, analyze, and visualize data derived
+from movement ecology studies. This packages provides a handful of
+examples of some useful ways to begin using some basic example data sets
+collected from a couple studies on neotropical bats.</p>
+<p>Three data sets will be used to provide a well rounded understanding
+of the type of data that can be used in movement ecology as well as some
+examples of what you can do with each.</p>
+<p>The three data sets include accelerometry, heart rate frequencies,
+and GPS points. Further variables can be derived from each of these data
+sets by performing various estimations such as work done (W), energy
+expended (J), or Vectorial Dynamic Body Acceleration (VeDBA). These
+calculations have already been performed and included in downloaded data
+sets.</p>
+<p>Now, to better determine if there is any possible relationships
+occurring between heart rate and work being done we can plot the two
+variables from one of our data sets against each other in a
+histogram.</p>
 <pre><code><span><span class="fu"><a href="../reference/histo_plot.html">histo_plot</a></span><span class="op">(</span><span class="va">BatData</span><span class="op">)</span></span></code></pre>
-<p>It is possible to include <a href="wright-lab.org">hyperlinks</a>.</p>
+<div class="figure">
+<embed src="/Cloud/project/graphics/Rplot.pdf"></embed><p class="caption">Heart Rate Histogram</p>
+</div>
+<p>Visualizing this and confirming or rejecting possible relationships
+between energy metrics can be useful when trying to determine which of
+these metabolic proxies to incorporate or utilize in an energy landscape
+visualization.</p>
+<p>Additionally, we can utilize the longitude and latitude data points
+obtained from GPS in one of our data sets to get a visualization of
+where they are located on an interactive map.</p>
+<pre><code><span><span class="fu"><a href="../reference/Mapping.html">Mapping</a></span><span class="op">(</span><span class="va">batcoord</span><span class="op">)</span></span></code></pre>
+<p>By doing this we can get a better understand of not only the visual
+location of the tagged animal but a better visual representation of the
+distribution of the animal in its environment as well as throughout its
+foraging night</p>
+<p>Click <a href="https://271f397ba2bb47a99242c45beb04ef07.app.posit.cloud/file_show?path=%2Fcloud%2Fproject%2Fgraphics%2FMap.html" class="external-link">here</a>
+to view what your interactive map should look like.</p>
+<p>Next, we can also utilize a function to clean one of our data sets to
+ensure there are no NA values within it.</p>
+<pre><code><span><span class="fu"><a href="../reference/clean_data.html">clean_data</a></span><span class="op">(</span><span class="va">BatData</span><span class="op">)</span></span></code></pre>
+<p>This function helps decrease the chances of error or incorrect
+calculations when doing further analyses of the data frame by removing
+the NA values that might otherwise lead to a source of error in your
+future calculations/estimates.</p>
+<p>Furthermore, we can create a Power Curve from our heart rate
+data.</p>
+<pre><code><span><span class="fu"><a href="../reference/Joules.html">Joules</a></span><span class="op">(</span><span class="va">accdata</span><span class="op">)</span></span></code></pre>
+<div class="figure">
+<embed src="/Cloud/project/graphics/powerplot.pdf"></embed><p class="caption">PowerCurve</p>
+</div>
+<p>By using this function, we can see how a bat’s heart rate varies as
+they alter the energy they are expending throughout a night. When you
+combine data such as this and pair it with spatial GPS data, you can
+categorize areas of low or high energy expenditure within their
+environment based on their locations.</p>
+<p>Lastly, we can calculate the standard deviation of our heart rate
+data.</p>
+<pre><code><span><span class="fu"><a href="../reference/sdfh.html">sdfh</a></span><span class="op">(</span><span class="va">BatData</span><span class="op">)</span></span></code></pre>
+<p>Returning a value of 106.9664</p>
+<p>This function helps us to determine the magnitude that bat’s deviate
+their heart rate from their mean heart rate frequency. This can be
+useful to utilize when estimating the minimum and maximum cost of
+transport for a certain species and spatial route.</p>
 </div>
   </div>
 
