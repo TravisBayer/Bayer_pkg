@@ -79,7 +79,7 @@ Now, to better determine if there is any possible relationships occurring betwee
 histo_plot(BatData)
 ```
 
-![Heart Rate Histogram](Cloud/project/graphics/Rplot.png)
+![Heart Rate Histogram](../graphics/HeartRate.png)
 
 Visualizing this and confirming or rejecting possible relationships between energy metrics can be useful when trying to determine which of these metabolic proxies to incorporate or utilize in an energy landscape visualization.
 
