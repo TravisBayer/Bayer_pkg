@@ -1,14 +1,13 @@
 #' Function reads in data set, omits any possible NA values, and returns that.
 #'
-#' @param filename name of file
+#' @param dataframe name of dataframe
 #'
-#' @return The NA values omitted from filename
+#' @return The NA values omitted from dataframe
 #' 
 #' @examples 
 #' clean_data(BatData)
 #' @export
-clean_data <- function(filename){
-  BatData <- readr::read_csv(filename)
+clean_data <- function(dataframe){
   deleteNA <- na.omit(BatData)
   return(deleteNA)
 }
