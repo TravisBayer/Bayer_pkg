@@ -44,7 +44,7 @@ library(leaflet)
 
 From here we can download the necessary or relevant data
 
-```{r eval=FALSE, include=TRUE}
+```
 download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv", destfile = "/cloud/project/data/ACC.csv")
 
 download.file(url ="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv", destfile = "/cloud/project/data/BatGPS.csv")

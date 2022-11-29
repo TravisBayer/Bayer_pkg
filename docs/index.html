@@ -68,7 +68,6 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<p><code>{r setup, include=FALSE} knitr::opts_chunk$set(echo = TRUE)</code></p>
 <div class="section level1">
 <div class="page-header"><h1 id="bayer_pkg-information-and-uses">Bayer_pkg information and uses<a class="anchor" aria-label="anchor" href="#bayer_pkg-information-and-uses"></a>
 </h1></div>
@@ -98,10 +97,13 @@
 <span></span>
 <span><span class="co">#Library all necessary packages</span></span></code></pre>
 <p>From here we can download the necessary or relevant data</p>
-<p>```{r eval=FALSE, include=TRUE} download.file(url =“<a href="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv" class="external-link uri">https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv</a>”, destfile = “/cloud/project/data/ACC.csv”)</p>
-<p>download.file(url =“<a href="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv" class="external-link uri">https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv</a>”, destfile = “/cloud/project/data/BatGPS.csv”)</p>
-<p>download.file(url =“<a href="https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv" class="external-link uri">https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv</a>”, destfile = “/cloud/project/data/uro_data_r.csv”)</p>
-<p>#Download and read each of the necessary data sets ```</p>
+<pre><code><span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url <span class="op">=</span><span class="st">"https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/ACC.csv"</span>, destfile <span class="op">=</span> <span class="st">"/cloud/project/data/ACC.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url <span class="op">=</span><span class="st">"https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/BatGPS.csv"</span>, destfile <span class="op">=</span> <span class="st">"/cloud/project/data/BatGPS.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url <span class="op">=</span><span class="st">"https://raw.githubusercontent.com/TravisBayer/Bayer_pkg/master/data/uro_data_r.csv"</span>, destfile <span class="op">=</span> <span class="st">"/cloud/project/data/uro_data_r.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#Download and read each of the necessary data sets</span></span></code></pre>
 <p>For further package tutorial instructions follow the package tutorial found under the articles tab above.</p>
 </div>
 <div class="section level1">
